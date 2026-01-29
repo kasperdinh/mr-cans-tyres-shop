@@ -78,18 +78,18 @@ This project utilizes a modern **Monorepo** structure.
 ```mermaid
 graph TD
     User((User))
-    subgraph Client [Frontend (Next.js)]
+    subgraph Client ["Frontend (Next.js)"]
         UI[User Interface]
         Auth[Auth Layer]
     end
 
-    subgraph Server [Backend (NestJS)]
+    subgraph Server ["Backend (NestJS)"]
         API[API Gateway]
         Service[Business Logic]
         AI_Service[AI Consultation Service]
     end
 
-    subgraph Data [Infrastructure]
+    subgraph Data ["Infrastructure"]
         DB[(PostgreSQL)]
         Ext_AI[DeepSeek API]
     end
@@ -153,9 +153,9 @@ Follow these steps to set up the project locally.
 
 ### Prerequisites
 
-- **Node.js** (v18+)
+- **Node.js**
 - **Docker & Docker Compose**
-- **npm** (v9+)
+- **npm**
 
 ### Installation
 
