@@ -288,7 +288,7 @@ Please ensure your code follows the established coding standards and includes ap
 
 ## 📄 License
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+Distributed under the **MIT License**. See [LICENSE](LICENSE) for more information.
 
 ---
 
