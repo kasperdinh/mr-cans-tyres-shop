@@ -166,13 +166,19 @@ Follow these steps to set up the project locally.
    cd mr-cans-tyres-shop
    ```
 
-2. **Install dependencies**
+2. **Install pnpm** (if not already installed)
 
    ```bash
-   npm install
+   npm install -g pnpm
    ```
 
-3. **Environment Setup**
+3. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+4. **Environment Setup**
    Duplicate the `.env.example` file in both `apps/client` and `apps/server`.
 
    ```bash
@@ -180,22 +186,22 @@ Follow these steps to set up the project locally.
    # Update database credentials and API keys
    ```
 
-4. **Spin up Infrastructure**
+5. **Spin up Infrastructure**
    Start the PostgreSQL container:
 
    ```bash
    docker-compose up -d db
    ```
 
-5. **Run Migrations**
+6. **Run Migrations**
 
    ```bash
    cd apps/server && npx prisma migrate dev
    ```
 
-6. **Start Development Servers**
+7. **Start Development Servers**
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 ---
@@ -225,8 +231,8 @@ Key environment variables to configure in your `.env` files.
 
 > ✅ **Current Status:** Phase 1 (Foundation & Infrastructure)
 
-- [ ] **Phase 1: Foundation & Infrastructure 🏗️**
-  - [ ] Initialize Monorepo (TurboRepo/Nx)
+- [/] **Phase 1: Foundation & Infrastructure 🏗️**
+  - [x] Initialize Monorepo (TurboRepo/Nx)
   - [ ] **Type Safety:** Shared DTOs & Interfaces package
   - [ ] **Code Quality:** ESLint, Prettier, and Husky (Commit hooks)
   - [ ] **Env Management:** Zod validation for Environment Variables
