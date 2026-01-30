@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
-    "lint": "tsc --noEmit"
+    "lint": "eslint && tsc --noEmit"
   },
   "devDependencies": {
     "@mr-cans/config": "workspace:*",

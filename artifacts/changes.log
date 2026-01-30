@@ -13,6 +13,19 @@
   - `apps/server/eslintrc.mjs` -> Extends shared config
   - `apps/client/eslintrc.mjs` -> Extends shared config
   - `packages/shared/package.json` -> Added dev dependencies
+
+## [2026-01-30] Build Fixes & Config Refinement
+**Task ID**: debug-build
+**Status**: Completed
+
+- **Files**:
+  - `packages/shared/eslint.config.mjs` (Created)
+  - `packages/shared/package.json` (Updated lint script)
+  - `apps/server/tsconfig.json` (Restricted types)
+  - `apps/client/tsconfig.json` (Restricted types)
+- **Deleted**:
+  - `@types/eslint__js` (Removed deprecated package from lockfile)
+
 - **Infrastructure**:
   - Installed `husky` (pre-commit hook configured)
   - Installed `lint-staged`
