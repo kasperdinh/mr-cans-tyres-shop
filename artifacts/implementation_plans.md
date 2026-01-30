@@ -63,3 +63,32 @@ root
 - Verify shared packages can be imported (in later steps, but structure needs to exist).
 
 ---
+
+# Implementation Plan - Shared DTOs Package
+
+## Goal Description
+
+Create a shared package `@mr-cans/shared` to house Types, Interfaces, and Zod Schemas shared between Client and Server to ensure type safety across the monorepo.
+
+## Proposed Changes
+
+### New Package `packages/shared`
+
+- **package.json**: Defined `@mr-cans/shared` with `zod` dependency.
+- **tsconfig.json**: Standard TypeScript configuration.
+- **src/index.ts**: Initial exports.
+
+### Apps Integration
+
+- **apps/server**: Added dependency on `@mr-cans/shared` and `zod`.
+- **apps/client**: Added dependency on `@mr-cans/shared` and `zod`.
+
+## Verification Plan
+
+### Automated Tests
+
+- `turbo run build`: Verified that all packages build and link correctly.
+
+### Manual Verification
+
+- Modified `apps/server/src/app.service.ts` to import `HELLO_WORLD` from the shared package to verify runtime resolution.

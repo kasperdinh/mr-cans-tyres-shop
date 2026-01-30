@@ -233,8 +233,8 @@ Key environment variables to configure in your `.env` files.
 > ✅ **Current Status:** Phase 1 (Foundation & Infrastructure)
 
 - [/] **Phase 1: Foundation & Infrastructure 🏗️**
-  - [x] Initialize Monorepo (TurboRepo/Nx)
-  - [ ] **Type Safety:** Shared DTOs & Interfaces package
+  - [x] Initialize Monorepo (TurboRepo)
+  - [x] **Type Safety:** Shared DTOs & Interfaces package
   - [ ] **Code Quality:** ESLint, Prettier, and Husky (Commit hooks)
   - [ ] **Env Management:** Zod validation for Environment Variables
   - [ ] Docker & Docker Compose environment (Postgres, Redis)
