@@ -1,0 +1,31 @@
+# Changes Log
+
+## [2026-01-30] Code Quality & Commit Hooks
+**Task ID**: task-quality
+**Status**: Completed
+
+- **Created**: `packages/config` workspace
+- **Files**:
+  - `packages/config/package.json`
+  - `packages/config/eslint/index.mjs`
+  - `packages/config/prettier/index.mjs`
+- **Modified**:
+  - `apps/server/eslintrc.mjs` -> Extends shared config
+  - `apps/client/eslintrc.mjs` -> Extends shared config
+  - `packages/shared/package.json` -> Added dev dependencies
+- **Infrastructure**:
+  - Installed `husky` (pre-commit hook configured)
+  - Installed `lint-staged`
+
+## [2026-01-30] Shared DTOs Package
+**Task ID**: task-shared-dtos
+**Status**: Completed
+
+- **Created**: `packages/shared` workspace
+- **Files**:
+  - `packages/shared/package.json`
+  - `packages/shared/tsconfig.json`
+  - `packages/shared/src/index.ts`
+- **Modified**:
+  - `apps/server/package.json` -> Linked workspace
+  - `apps/client/package.json` -> Linked workspace

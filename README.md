@@ -235,7 +235,7 @@ Key environment variables to configure in your `.env` files.
 - [/] **Phase 1: Foundation & Infrastructure 🏗️**
   - [x] Initialize Monorepo (TurboRepo)
   - [x] **Type Safety:** Shared DTOs & Interfaces package
-  - [ ] **Code Quality:** ESLint, Prettier, and Husky (Commit hooks)
+  - [x] **Code Quality:** ESLint, Prettier, and Husky (Commit hooks)
   - [ ] **Env Management:** Zod validation for Environment Variables
   - [ ] Docker & Docker Compose environment (Postgres, Redis)
   - [ ] CI/CD Pipeline Setup (GitHub Actions)

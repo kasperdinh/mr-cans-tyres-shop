@@ -9,6 +9,7 @@
     "lint": "tsc --noEmit"
   },
   "devDependencies": {
+    "@mr-cans/config": "workspace:*",
     "typescript": "^5.3.3",
     "zod": "^3.22.4"
   },
