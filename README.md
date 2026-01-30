@@ -1,5 +1,6 @@
 # 📍 Mr. Can's Tyres Shop – Digital Platform
 
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=flat-square)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js)](https://nextjs.org)
 [![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)](https://nestjs.com)
@@ -300,8 +301,3 @@ If you are in Nha Trang City and need help with your bike, come visit us!
 - **Address:** [325, 2/4 Street, Nha Trang, Vietnam](https://www.google.com/search?q=https://maps.google.com/%3Fq%3D325%2B2/4%2BStreet%2BNha%2BTrang)
 - **Phone:** [+84 377 149 693](https://www.google.com/search?q=tel:%2B84377149693)
 - **Social:** [Zalo Chat](https://zalo.me/0377149693) | [WhatsApp Chat](https://wa.me/84377149693)
-
----
-
-> Built with ❤️ by [kasperdinh](https://github.com/kasperdinh).
-> _Dedicated to digitizing local Vietnamese businesses._
