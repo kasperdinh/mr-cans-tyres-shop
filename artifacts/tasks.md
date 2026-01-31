@@ -9,3 +9,11 @@
 - Docker & Docker Compose (Postgres, Redis) ✅ <!-- id: 4 -->
 - CI/CD Pipeline Setup (GitHub Actions) ✅ <!-- id: 5 -->
 - Refactor: Rename scope to @canstyres ✅ <!-- id: 6 -->
+
+# Phase 2: Backend Core (The Engine)
+
+- NestJS Application Setup [/] <!-- id: 7 -->
+- AI-Ready Schema (Postgres) ⬜ <!-- id: 8 -->
+- Secure Auth (JWT/OAuth) ⬜ <!-- id: 9 -->
+- Product & Service Catalog API ⬜ <!-- id: 10 -->
+- Data Integrity (Audit Logging) ⬜ <!-- id: 11 -->
