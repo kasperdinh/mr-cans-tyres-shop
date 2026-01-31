@@ -11,6 +11,9 @@
 - Husky pre-commit hook installed, lint-staged configured (prettier --write)
 - Verification: turbo run lint passed all packages
 - Shared DTOs: packages/shared created with TS + Zod
-- Server & Client linked via workspace:* protocol
+- Server & Client linked via workspace:\* protocol
 - Verification: turbo run build passed; runtime import in server verified
 - Next steps: Implement DTOs for Auth and Products
+- Env Validation: Zod schema (PORT, DATABASE_URL, NODE_ENV) integrated in Server
+- Config Module: @nestjs/config + validation function in AppModule
+- Verification: Startup fails on invalid env, succeeds on valid env

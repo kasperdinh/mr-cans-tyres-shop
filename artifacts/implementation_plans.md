@@ -2,7 +2,7 @@
 
 - Monorepo Init: TurboRepo + pnpm for client (Next.js) & server (NestJS)
 - Root package.json → scripts & workspace paths
-- pnpm-workspace.yaml → apps/* and packages/*
+- pnpm-workspace.yaml → apps/_ and packages/_
 - turbo.json → pipeline: build, test, lint, dev
 - Apps: apps/client → Next.js init, remove git; apps/server → NestJS init via CLI
 - Packages: packages/config, packages/types created
@@ -16,3 +16,6 @@
 - packages/shared: package.json with zod, tsconfig.json, src/index.ts
 - Apps integration: server + client depend on @mr-cans/shared & zod
 - Verification: turbo run build → packages build/link; runtime import tested in server
+- Env Validation: @nestjs/config installed in server
+- Schema: apps/server/src/env.validation.ts (Zod)
+- Integration: AppModule.forRoot({ validate, isGlobal: true })
