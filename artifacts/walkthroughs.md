@@ -26,3 +26,4 @@
 - Branch Protection: Enforced via GH CLI (Require PR, 1 Review, Linear History, Checks: Lint/Build/Test)
 - Refactor: Renamed package scope from `@mr-cans` to `@canstyres`
 - Impact: Updated `packages/*`, `apps/*` dependencies, and all source imports.
+- Consistency: Docker containers renamed to `canstyres-*`. CI envs blocked.

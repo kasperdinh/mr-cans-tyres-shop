@@ -1,9 +1,7 @@
-version: "3.8"
-
 services:
   db:
     image: postgres:16-alpine
-    container_name: mr-cans-tyres-shop-postgres
+    container_name: canstyres-postgres
     ports:
       - "5432:5432"
     environment:
@@ -14,19 +12,19 @@ services:
       - ./.docker-data/postgres:/var/lib/postgresql/data
     restart: always
     networks:
-      - mr-cans-tyres-shop-net
+      - canstyres-net
 
   redis:
     image: redis:7-alpine
-    container_name: mr-cans-tyres-shop-redis
+    container_name: canstyres-redis
     ports:
       - "6379:6379"
     volumes:
       - ./.docker-data/redis:/data
     restart: always
     networks:
-      - mr-cans-tyres-shop-net
+      - canstyres-net
 
 networks:
-  mr-cans-tyres-shop-net:
+  canstyres-net:
     driver: bridge

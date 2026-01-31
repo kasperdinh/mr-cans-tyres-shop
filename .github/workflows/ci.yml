@@ -11,6 +11,11 @@ jobs:
     name: Lint, Build & Test
     runs-on: ubuntu-latest
 
+    env:
+      PORT: 3000
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/canstyres_db"
+      NODE_ENV: "test"
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
