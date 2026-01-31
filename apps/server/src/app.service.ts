@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { HELLO_WORLD } from '@mr-cans/shared';
+import { HELLO_WORLD } from '@canstyres/shared';
 
 @Injectable()
 export class AppService {

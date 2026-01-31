@@ -11,6 +11,19 @@
 - Husky pre-commit hook installed, lint-staged configured (prettier --write)
 - Verification: turbo run lint passed all packages
 - Shared DTOs: packages/shared created with TS + Zod
-- Server & Client linked via workspace:* protocol
+- Server & Client linked via workspace:\* protocol
 - Verification: turbo run build passed; runtime import in server verified
 - Next steps: Implement DTOs for Auth and Products
+- Env Validation: Zod schema (PORT, DATABASE_URL, NODE_ENV) integrated in Server
+- Config Module: @nestjs/config + validation function in AppModule
+- Verification: Startup fails on invalid env, succeeds on valid env
+- Docker Setup: Postgres 16 & Redis 7 via docker-compose
+- Persistence: Local volume mapping to `.docker-data`
+- Scripts: `pnpm docker:up` and `pnpm docker:down` added
+- CI/CD: Actions workflow created (.github/workflows/ci.yml)
+- Pipeline: Lint, Build, Test (via TurboRepo)
+- Testing: Fixed app.controller.spec.ts to match shared constant
+- Branch Protection: Enforced via GH CLI (Require PR, 1 Review, Linear History, Checks: Lint/Build/Test)
+- Refactor: Renamed package scope from `@mr-cans` to `@canstyres`
+- Impact: Updated `packages/*`, `apps/*` dependencies, and all source imports.
+- Consistency: Docker containers renamed to `canstyres-*`. CI envs blocked.
