@@ -8,6 +8,7 @@
 - Env Management: Zod validation for environment variables ✅ <!-- id: 3 -->
 - Docker & Docker Compose (Postgres, Redis) ✅ <!-- id: 4 -->
 - CI/CD Pipeline Setup (GitHub Actions) ✅ <!-- id: 5 -->
+  - Optimization: Concurrency & Path Filtering added ✅
 - Refactor: Rename scope to @canstyres ✅ <!-- id: 6 -->
 
 # Phase 2: Backend Core (The Engine)

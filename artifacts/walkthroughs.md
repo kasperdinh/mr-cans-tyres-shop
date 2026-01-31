@@ -29,6 +29,7 @@
 - Refactor: Renamed package scope from `@mr-cans` to `@canstyres`
 - Impact: Updated `packages/*`, `apps/*` dependencies, and all source imports.
 - Consistency: Docker containers renamed to `canstyres-*`. CI envs blocked.
+- Optimization: Added CI concurrency (cancel-in-progress) and paths-ignore (MD/Docs) to reduce GitHub Actions usage.
 
 # Phase 2: Backend Core (In Progress)
 
