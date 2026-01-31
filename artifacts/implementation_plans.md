@@ -1,5 +1,7 @@
 # Implementation Plan - Monorepo Initialization
 
+## Phase 1: Foundation & Infrastructure
+
 - Monorepo Init: TurboRepo + pnpm for client (Next.js) & server (NestJS)
 - Root package.json → scripts & workspace paths
 - pnpm-workspace.yaml → apps/_ and packages/_

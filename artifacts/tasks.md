@@ -1,6 +1,6 @@
 # Tasks - Monorepo Initialization
 
-## Phase 1: Foundation & Infrastructure 🏗️
+## Phase 1: Foundation & Infrastructure
 
 - Initialize Monorepo (TurboRepo) ✅ <!-- id: 0 -->
 - Type Safety: Shared DTOs & Interfaces package ✅ <!-- id: 1 -->

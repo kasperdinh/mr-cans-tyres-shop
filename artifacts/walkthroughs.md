@@ -1,5 +1,7 @@
 # Walkthrough - Monorepo Initialization
 
+## Phase 1: Foundation & Infrastructure
+
 - Monorepo Init: TurboRepo configured, pnpm workspace enabled
 - Files created: package.json, pnpm-workspace.yaml, turbo.json
 - Frontend (apps/client): Next.js 15, Tailwind, TypeScript initialized
