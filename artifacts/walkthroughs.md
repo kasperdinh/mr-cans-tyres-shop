@@ -17,3 +17,6 @@
 - Env Validation: Zod schema (PORT, DATABASE_URL, NODE_ENV) integrated in Server
 - Config Module: @nestjs/config + validation function in AppModule
 - Verification: Startup fails on invalid env, succeeds on valid env
+- Docker Setup: Postgres 16 & Redis 7 via docker-compose
+- Persistence: Local volume mapping to `.docker-data`
+- Scripts: `pnpm docker:up` and `pnpm docker:down` added

@@ -19,3 +19,6 @@
 - Env Validation: @nestjs/config installed in server
 - Schema: apps/server/src/env.validation.ts (Zod)
 - Integration: AppModule.forRoot({ validate, isGlobal: true })
+- Docker Setup: infra/docker/docker-compose.yml created
+- Services: Postgres 16 (port 5432), Redis 7 (port 6379)
+- Config: Local .docker-data/ persistence, .gitignore updated
