@@ -1,5 +1,5 @@
 {
-  "name": "@mr-cans/shared",
+  "name": "@canstyres/shared",
   "version": "0.0.1",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -9,7 +9,7 @@
     "lint": "eslint && tsc --noEmit"
   },
   "devDependencies": {
-    "@mr-cans/config": "workspace:*",
+    "@canstyres/config": "workspace:*",
     "typescript": "^5.3.3",
     "zod": "^3.22.4"
   },

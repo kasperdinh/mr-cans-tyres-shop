@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { HELLO_WORLD } from '@mr-cans/shared';
+import { HELLO_WORLD } from '@canstyres/shared';
 
 describe('AppController', () => {
   let appController: AppController;

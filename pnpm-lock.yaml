@@ -23,7 +23,7 @@ importers:
 
   apps/client:
     dependencies:
-      '@mr-cans/shared':
+      '@canstyres/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       next:
@@ -39,7 +39,7 @@ importers:
         specifier: ^3.22.4
         version: 3.25.76
     devDependencies:
-      '@mr-cans/config':
+      '@canstyres/config':
         specifier: workspace:*
         version: link:../../packages/config
       '@tailwindcss/postcss':
@@ -69,7 +69,7 @@ importers:
 
   apps/server:
     dependencies:
-      '@mr-cans/shared':
+      '@canstyres/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       '@nestjs/common':
@@ -94,15 +94,15 @@ importers:
         specifier: ^3.22.4
         version: 3.25.76
     devDependencies:
+      '@canstyres/config':
+        specifier: workspace:*
+        version: link:../../packages/config
       '@eslint/eslintrc':
         specifier: ^3.2.0
         version: 3.3.3
       '@eslint/js':
         specifier: ^9.18.0
         version: 9.39.2
-      '@mr-cans/config':
-        specifier: workspace:*
-        version: link:../../packages/config
       '@nestjs/cli':
         specifier: ^11.0.0
         version: 11.0.16(@types/node@22.19.7)
@@ -199,7 +199,7 @@ importers:
 
   packages/shared:
     devDependencies:
-      '@mr-cans/config':
+      '@canstyres/config':
         specifier: workspace:*
         version: link:../config
       typescript:

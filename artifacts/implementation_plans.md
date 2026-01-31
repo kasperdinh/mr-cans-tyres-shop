@@ -25,3 +25,4 @@
 - CI/CD: .github/workflows/ci.yml created (Push/PR triggers)
 - Turbo: Added 'test' task pipeline
 - Verification: pnpm test passes locally (Unit tests fixed)
+- Refactor: Scope renamed to `@canstyres`. Verified via `turbo run build` and `turbo run test`.

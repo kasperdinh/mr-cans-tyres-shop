@@ -8,3 +8,4 @@
 - Env Management: Zod validation for environment variables ✅ <!-- id: 3 -->
 - Docker & Docker Compose (Postgres, Redis) ✅ <!-- id: 4 -->
 - CI/CD Pipeline Setup (GitHub Actions) ✅ <!-- id: 5 -->
+- Refactor: Rename scope to @canstyres ✅ <!-- id: 6 -->

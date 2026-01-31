@@ -23,3 +23,6 @@
 - CI/CD: Actions workflow created (.github/workflows/ci.yml)
 - Pipeline: Lint, Build, Test (via TurboRepo)
 - Testing: Fixed app.controller.spec.ts to match shared constant
+- Branch Protection: Enforced via GH CLI (Require PR, 1 Review, Linear History, Checks: Lint/Build/Test)
+- Refactor: Renamed package scope from `@mr-cans` to `@canstyres`
+- Impact: Updated `packages/*`, `apps/*` dependencies, and all source imports.
