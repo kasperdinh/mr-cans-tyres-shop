@@ -22,3 +22,6 @@
 - Docker Setup: infra/docker/docker-compose.yml created
 - Services: Postgres 16 (port 5432), Redis 7 (port 6379)
 - Config: Local .docker-data/ persistence, .gitignore updated
+- CI/CD: .github/workflows/ci.yml created (Push/PR triggers)
+- Turbo: Added 'test' task pipeline
+- Verification: pnpm test passes locally (Unit tests fixed)

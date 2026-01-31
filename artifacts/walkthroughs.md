@@ -20,3 +20,6 @@
 - Docker Setup: Postgres 16 & Redis 7 via docker-compose
 - Persistence: Local volume mapping to `.docker-data`
 - Scripts: `pnpm docker:up` and `pnpm docker:down` added
+- CI/CD: Actions workflow created (.github/workflows/ci.yml)
+- Pipeline: Lint, Build, Test (via TurboRepo)
+- Testing: Fixed app.controller.spec.ts to match shared constant
