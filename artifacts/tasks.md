@@ -13,7 +13,7 @@
 
 # Phase 2: Backend Core (The Engine)
 
-- NestJS Application Setup [/] <!-- id: 7 -->
+- NestJS Application Setup ✅ <!-- id: 7 -->
 - AI-Ready Schema (Postgres) ⬜ <!-- id: 8 -->
 - Secure Auth (JWT/OAuth) ⬜ <!-- id: 9 -->
 - Product & Service Catalog API ⬜ <!-- id: 10 -->

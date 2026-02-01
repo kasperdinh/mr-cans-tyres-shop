@@ -34,3 +34,9 @@
 # Phase 2: Backend Core (In Progress)
 
 - Initialization: Branch `feature/phase-2-backend-core` created.
+- NestJS App Setup:
+  - Installed `nestjs-zod`, `helmet`, `compression`, `@nestjs/swagger`.
+  - Configured Global Prefix `/api` & URI Versioning `v1`.
+  - Integrated `ZodValidationPipe` globally.
+  - Setup Swagger at `/docs`.
+  - Verified: `pnpm build`, `pnpm lint`, `pnpm test` passed.
