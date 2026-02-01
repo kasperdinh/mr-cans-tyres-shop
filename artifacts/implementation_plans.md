@@ -1,5 +1,7 @@
 # Implementation Plan - Monorepo Initialization
 
+## Phase 1: Foundation & Infrastructure
+
 - Monorepo Init: TurboRepo + pnpm for client (Next.js) & server (NestJS)
 - Root package.json → scripts & workspace paths
 - pnpm-workspace.yaml → apps/_ and packages/_
@@ -26,3 +28,23 @@
 - Turbo: Added 'test' task pipeline
 - Verification: pnpm test passes locally (Unit tests fixed)
 - Refactor: Scope renamed to `@canstyres`. Verified via `turbo run build` and `turbo run test`.
+
+# Phase 2: Backend Core
+
+## Goal Description
+
+Build the backend engine using NestJS, focusing on Postgres schema, Secure Auth, and Catalog API.
+
+## Proposed Changes
+
+### [NEW] [Postgres Schema]
+
+- Design schema for Products, Services, Orders, Users using Prisma.
+
+### [NEW] [Auth Module]
+
+- Implement JWT-based authentication.
+
+### [NEW] [Catalog Module]
+
+- CRUD endpoints for Products and Services.

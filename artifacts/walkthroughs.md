@@ -1,5 +1,7 @@
 # Walkthrough - Monorepo Initialization
 
+## Phase 1: Foundation & Infrastructure
+
 - Monorepo Init: TurboRepo configured, pnpm workspace enabled
 - Files created: package.json, pnpm-workspace.yaml, turbo.json
 - Frontend (apps/client): Next.js 15, Tailwind, TypeScript initialized
@@ -27,3 +29,14 @@
 - Refactor: Renamed package scope from `@mr-cans` to `@canstyres`
 - Impact: Updated `packages/*`, `apps/*` dependencies, and all source imports.
 - Consistency: Docker containers renamed to `canstyres-*`. CI envs blocked.
+- Optimization: Added CI concurrency (cancel-in-progress) and paths-ignore (MD/Docs/Artifacts) to reduce GitHub Actions usage.
+
+# Phase 2: Backend Core (In Progress)
+
+- Initialization: Branch `feature/phase-2-backend-core` created.
+- NestJS App Setup:
+  - Installed `nestjs-zod`, `helmet`, `compression`, `@nestjs/swagger`.
+  - Configured Global Prefix `/api` & URI Versioning `v1`.
+  - Integrated `ZodValidationPipe` globally.
+  - Setup Swagger at `/docs`.
+  - Verified: `pnpm build`, `pnpm lint`, `pnpm test` passed.
