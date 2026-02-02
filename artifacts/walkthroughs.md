@@ -8,5 +8,5 @@
 
 - [x] **Schema**: Designed AI-ready Postgres schema with `Compatibility` engine and rich comments.
 - [x] **Auth**: Implemented secure JWT Auth with RBAC (`ADMIN`/`STAFF`) and `bcrypt`.
-- [x] **Fixes**: Resolved `@nestjs/jwt` and Prisma version conflicts during build.
+- [x] **Security**: Hardened Auth with `RolesGuard`, restricted `/register` to Admin-only.
 - [x] **Result**: Server builds successfully; Schema and Auth modules are fully integrated.

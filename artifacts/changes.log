@@ -10,4 +10,4 @@
 **Status**: Completed
 - **Database**: Added `User`, `Product`, `Vehicle` models with AI context comments in schema.prisma.
 - **Auth**: Implemented `AuthModule` (JWT + Passport), `AuthService` (Login/Register), and `JwtAuthGuard`.
-- **Deps**: Installed `passport`, `bcrypt`, `prisma`, fixed `@nestjs/jwt` type errors.
+- **Security**: Added `RolesGuard`, `@Roles` decorator, and locked down `/auth/register` to ADMINs.
