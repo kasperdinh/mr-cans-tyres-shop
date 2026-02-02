@@ -1,0 +1,163 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// @model User
+/// Represents an authenticated user in the system (Staff or Admin).
+/// NOT used for customers (customers are anonymous or untracked).
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  /// Hashed password.
+  password  String
+  name      String?
+  role      UserRole @default(STAFF)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  auditLogs AuditLog[]
+}
+
+enum UserRole {
+  ADMIN /// Full access to everything.
+  STAFF /// Restricted access to daily operations.
+}
+
+/// @model Product
+/// Represents a physical item in inventory (e.g., Tyre, Oil, Battery).
+/// Used by AI to recommend replacements based on vehicle compatibility.
+model Product {
+  id          String          @id @default(uuid())
+  /// Human-readable name (e.g., "Michelin City Grip 2").
+  name        String
+  /// SKU or Barcode for inventory tracking.
+  sku         String          @unique
+  /// Categorization for AI filtering.
+  type        ProductType
+  /// Description of the product features.
+  description String?
+  /// Price in VND. Stored as Decimal to avoid floating point errors.
+  price       Decimal         @db.Decimal(10, 2)
+  /// Current stock level.
+  stock       Int             @default(0)
+  /// JSON object containing technical specs (e.g., "{ size: '110/70-14', compound: 'medium' }").
+  specs       Json?
+  /// Tags to help AI search (e.g., ["grip", "rain", "durable"]).
+  searchTags  String[]
+  /// Compatibility links to Vehicles.
+  fits        Compatibility[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ProductType {
+  TYRE /// Rubber tyres for wheels.
+  OIL /// Engine or gear oil.
+  BATTERY /// Electrical storage.
+  BRAKE_PAD /// Brake pads or shoes.
+  SPARE_PART /// General spare parts (mirrors, lights, etc.).
+  OTHER /// Miscellaneous items.
+}
+
+/// @model Service
+/// Represents a labor service offered by the shop (e.g., Tyre Change, Oil Change).
+model Service {
+  id          String      @id @default(uuid())
+  /// Name of the service (e.g., "Full Synthetic Oil Change").
+  name        String
+  type        ServiceType
+  description String?
+  /// Base price for labor. Parts are charged separately (Product).
+  basePrice   Decimal     @db.Decimal(10, 2)
+  /// Estimated duration in minutes.
+  durationMin Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ServiceType {
+  MAINTENANCE /// Routine checks and changes.
+  REPAIR /// Fixing broken components.
+  INSPECTION /// Diagnostic services.
+  WASH /// Cleaning services.
+}
+
+/// @model Vehicle
+/// Represents a supported motorbike model (e.g., Honda Vision 2021).
+/// Crucial for AI to match Products (which fit specific Vehicles).
+model Vehicle {
+  id        String      @id @default(uuid())
+  /// Brand name (e.g., "Honda", "Yamaha").
+  brand     String
+  /// Model name (e.g., "Vision", "Air Blade").
+  model     String
+  /// Year or generation (e.g., "2021-2023").
+  yearRange String?
+  /// Technical type (e.g., SCOOTER, MANUAL, CLUTCH).
+  type      VehicleType
+
+  /// Front tyre size spec (e.g., "80/90-14").
+  frontTyre   String?
+  /// Rear tyre size spec (e.g., "90/90-14").
+  rearTyre    String?
+  /// Engine oil capacity in liters (e.g., 0.8).
+  oilCapacity Float?
+
+  compatibleProducts Compatibility[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([brand, model, yearRange])
+}
+
+enum VehicleType {
+  SCOOTER /// Automatic transmission (CVT).
+  MANUAL /// Manual gear (Cub, Wave).
+  CLUTCH /// Manual clutch (Exciter, Winner).
+  ELECTRIC /// Electric motor.
+}
+
+/// @model Compatibility
+/// Many-to-Many link between Products and Vehicles.
+/// Defines WHICH product fits WHICH vehicle.
+model Compatibility {
+  id String @id @default(uuid())
+
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+
+  vehicle   Vehicle @relation(fields: [vehicleId], references: [id])
+  vehicleId String
+
+  /// Notes on fitment (e.g., "Rear wheel only").
+  note String?
+
+  @@unique([productId, vehicleId])
+}
+
+/// @model AuditLog
+/// Tracks important changes in the system for integrity.
+model AuditLog {
+  id       String @id @default(uuid())
+  action   String /// e.g. "UPDATE_PRICE", "ADJUST_STOCK"
+  entity   String /// e.g. "Product", "Service"
+  entityId String
+
+  details Json? /// Old/New values.
+
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String?
+
+  createdAt DateTime @default(now())
+}
