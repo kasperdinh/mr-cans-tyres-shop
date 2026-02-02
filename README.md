@@ -108,7 +108,7 @@ graph TD
 | Domain       | Technology       | Description                                                                                                      |
 | :----------- | :--------------- | :--------------------------------------------------------------------------------------------------------------- |
 | **Frontend** | **Next.js**      | App Router, React Server Components, Tailwind CSS, Framer Motion.                                                |
-| **Backend**  | **NestJS**       | TypeScript, Modular Architecture, DTO Validation, Swagger API.                                                   |
+| **Backend**  | **NestJS**       | Modular Architecture, Zod Validation, Swagger API (Docs at `/docs`), Helmet Security.                            |
 | **AI / LLM** | **DeepSeek API** | Cost-efficient LLM with strong multilingual support. Custom prompt engineering with inventory context injection. |
 
 ### 🗄 Infrastructure & Data
@@ -200,10 +200,15 @@ Follow these steps to set up the project locally.
    cd apps/server && npx prisma migrate dev
    ```
 
+   ```
+
+   ```
+
 7. **Start Development Servers**
    ```bash
    pnpm dev
    ```
+   > **Note:** The server API is available at `http://localhost:3000/api` and Swagger Docs at `http://localhost:3000/docs`.
 
 ---
 
@@ -230,9 +235,9 @@ Key environment variables to configure in your `.env` files.
 
 ## 🌱 Roadmap
 
-> ✅ **Current Status:** Phase 1 (Foundation & Infrastructure)
+> ✅ **Current Status:** Phase 2: Backend Core (The Engine) ⚙️
 
-- [/] **Phase 1: Foundation & Infrastructure 🏗️**
+- [x] **Phase 1: Foundation & Infrastructure 🏗️**
   - [x] Initialize Monorepo (TurboRepo)
   - [x] **Type Safety:** Shared DTOs & Interfaces package
   - [x] **Code Quality:** ESLint, Prettier, and Husky (Commit hooks)
@@ -241,9 +246,9 @@ Key environment variables to configure in your `.env` files.
   - [x] CI/CD Pipeline Setup (GitHub Actions)
 
 - [ ] **Phase 2: Backend Core (The Engine) ⚙️**
-  - [ ] NestJS Application Setup
-  - [ ] **AI-Ready Schema:** Postgres Schema with structured descriptions & constraints
-  - [ ] **Secure Auth:** Role-based System (Admin/User) via JWT/OAuth
+  - [x] NestJS Application Setup (Global Validation, Swagger, Helmet)
+  - [x] **AI-Ready Schema:** Postgres Schema with structured descriptions & constraints
+  - [x] **Secure Auth:** Role-based System (Admin/User) via JWT/OAuth
   - [ ] Product & Service Catalog API (CRUD)
   - [ ] **Data Integrity:** Audit Logging & Pricing History
 

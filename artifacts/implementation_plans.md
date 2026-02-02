@@ -1,28 +1,58 @@
-# Implementation Plan - Monorepo Initialization
+# Implementation Plan - Backend Core (Phase 2)
 
-- Monorepo Init: TurboRepo + pnpm for client (Next.js) & server (NestJS)
-- Root package.json → scripts & workspace paths
-- pnpm-workspace.yaml → apps/_ and packages/_
-- turbo.json → pipeline: build, test, lint, dev
-- Apps: apps/client → Next.js init, remove git; apps/server → NestJS init via CLI
-- Packages: packages/config, packages/types created
-- Verification: pnpm build works, pnpm dev runs both apps, folder structure correct
-- Code Quality: centralize ESLint + Prettier in packages/config
-- ESLint: eslint/index.mjs shared config; Prettier: prettier/index.mjs
-- Apps extend shared config: server, client, shared
-- Husky + lint-staged pre-commit hook setup
-- Verification: turbo lint passes all packages
-- Shared DTOs: @mr-cans/shared for Types, Interfaces, Zod Schemas
-- packages/shared: package.json with zod, tsconfig.json, src/index.ts
-- Apps integration: server + client depend on @mr-cans/shared & zod
-- Verification: turbo run build → packages build/link; runtime import tested in server
-- Env Validation: @nestjs/config installed in server
-- Schema: apps/server/src/env.validation.ts (Zod)
-- Integration: AppModule.forRoot({ validate, isGlobal: true })
-- Docker Setup: infra/docker/docker-compose.yml created
-- Services: Postgres 16 (port 5432), Redis 7 (port 6379)
-- Config: Local .docker-data/ persistence, .gitignore updated
-- CI/CD: .github/workflows/ci.yml created (Push/PR triggers)
-- Turbo: Added 'test' task pipeline
-- Verification: pnpm test passes locally (Unit tests fixed)
-- Refactor: Scope renamed to `@canstyres`. Verified via `turbo run build` and `turbo run test`.
+## Goal
+
+Build the backend engine using NestJS, focusing on Postgres schema and Secure Auth.
+
+## Proposed Changes
+
+### [NEW] Postgres Schema
+
+- **Models**: `User`, `Product`, `Service`, `Vehicle`, `Compatibility`, `AuditLog`.
+- **Features**:
+  - Rich `///` comments for AI context.
+  - Strict Enums (`ProductType`, `VehicleType`) for validation.
+
+### [NEW] Auth Module
+
+- **Components**: `AuthService`, `AuthController`, `JwtStrategy`, `RolesGuard`.
+- **Logic**: JWT-based stateless auth with RBAC (`ADMIN` vs `STAFF`).
+- **Security**: `bcrypt` hashing, standard Bearer token flow.
+
+## Verification
+
+- **Automated**: `nest build`, `prisma format`, `prisma generate`.
+- **Manual**: Test Login/Register endpoints via Swagger/Curl.
+
+# Implementation Plan - Security Hardening (Priority)
+
+## Goal
+
+Fix critical security gaps identified during audit: missing RBAC enforcement and public registration.
+
+## User Review Required
+
+> [!IMPORTANT]
+>
+> - **Critical Finding**: `RolesGuard` is missing; `ADMIN` vs `STAFF` is not enforced.
+> - **Remediation**:
+>   1. Implement `RolesGuard`.
+>   2. Restrict `/auth/register` to `ADMIN` only (prevent unauthorized staff creation).
+>   3. Add `Roles` decorator.
+
+## Proposed Changes
+
+### Backend Layer
+
+#### [NEW] [roles.guard.ts](file:///Users/kasperdinh/Dev/mr-cans-tyres-shop/apps/server/src/auth/guards/roles.guard.ts)
+
+- Logic: Check `context.switchToHttp().getRequest().user.role` against `@Roles()`.
+
+#### [NEW] [roles.decorator.ts](file:///Users/kasperdinh/Dev/mr-cans-tyres-shop/apps/server/src/auth/decorators/roles.decorator.ts)
+
+- Custom decorator to set metadata keys.
+
+#### [MODIFY] [auth.controller.ts](file:///Users/kasperdinh/Dev/mr-cans-tyres-shop/apps/server/src/auth/auth.controller.ts)
+
+- Apply `@UseGuards(JwtAuthGuard, RolesGuard)`.
+- Apply `@Roles(UserRole.ADMIN)` to `register` endpoint.
