@@ -1,44 +1,13 @@
 # Changes Log
 
-## [2026-01-30] Code Quality & Commit Hooks
-**Task ID**: task-quality
+## [2026-01-30] Foundation & Infrastructure
 **Status**: Completed
+- **Monorepo**: TurboRepo setup with `apps/client`, `apps/server`, `packages/shared`.
+- **Quality**: Shared ESLint/Prettier config, Husky hooks, GitHub Actions CI.
+- **DevOps**: Docker Compose (Postgres/Redis), Env Validation with Zod.
 
-- **Created**: `packages/config` workspace
-- **Files**:
-  - `packages/config/package.json`
-  - `packages/config/eslint/index.mjs`
-  - `packages/config/prettier/index.mjs`
-- **Modified**:
-  - `apps/server/eslintrc.mjs` -> Extends shared config
-  - `apps/client/eslintrc.mjs` -> Extends shared config
-  - `packages/shared/package.json` -> Added dev dependencies
-
-## [2026-01-30] Build Fixes & Config Refinement
-**Task ID**: debug-build
+## [2026-02-02] Backend Core: Schema & Auth
 **Status**: Completed
-
-- **Files**:
-  - `packages/shared/eslint.config.mjs` (Created)
-  - `packages/shared/package.json` (Updated lint script)
-  - `apps/server/tsconfig.json` (Restricted types)
-  - `apps/client/tsconfig.json` (Restricted types)
-- **Deleted**:
-  - `@types/eslint__js` (Removed deprecated package from lockfile)
-
-- **Infrastructure**:
-  - Installed `husky` (pre-commit hook configured)
-  - Installed `lint-staged`
-
-## [2026-01-30] Shared DTOs Package
-**Task ID**: task-shared-dtos
-**Status**: Completed
-
-- **Created**: `packages/shared` workspace
-- **Files**:
-  - `packages/shared/package.json`
-  - `packages/shared/tsconfig.json`
-  - `packages/shared/src/index.ts`
-- **Modified**:
-  - `apps/server/package.json` -> Linked workspace
-  - `apps/client/package.json` -> Linked workspace
+- **Database**: Added `User`, `Product`, `Vehicle` models with AI context comments in schema.prisma.
+- **Auth**: Implemented `AuthModule` (JWT + Passport), `AuthService` (Login/Register), and `JwtAuthGuard`.
+- **Deps**: Installed `passport`, `bcrypt`, `prisma`, fixed `@nestjs/jwt` type errors.

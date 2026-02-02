@@ -247,8 +247,8 @@ Key environment variables to configure in your `.env` files.
 
 - [ ] **Phase 2: Backend Core (The Engine) ⚙️**
   - [x] NestJS Application Setup (Global Validation, Swagger, Helmet)
-  - [ ] **AI-Ready Schema:** Postgres Schema with structured descriptions & constraints
-  - [ ] **Secure Auth:** Role-based System (Admin/User) via JWT/OAuth
+  - [x] **AI-Ready Schema:** Postgres Schema with structured descriptions & constraints
+  - [x] **Secure Auth:** Role-based System (Admin/User) via JWT/OAuth
   - [ ] Product & Service Catalog API (CRUD)
   - [ ] **Data Integrity:** Audit Logging & Pricing History
 

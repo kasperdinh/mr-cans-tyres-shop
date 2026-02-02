@@ -15,6 +15,6 @@
 
 - NestJS Application Setup ✅ <!-- id: 7 -->
 - AI-Ready Schema (Postgres) ✅ <!-- id: 8 -->
-- Secure Auth (JWT/OAuth) ⬜ <!-- id: 9 -->
+- Secure Auth (JWT/OAuth) ✅ <!-- id: 9 -->
 - Product & Service Catalog API ⬜ <!-- id: 10 -->
 - Data Integrity (Audit Logging) ⬜ <!-- id: 11 -->
